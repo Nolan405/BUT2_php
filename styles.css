@@ -1,6 +1,7 @@
 table {
     width: 100%;
     border-collapse: collapse;
+     border: 1;
 }
 
 th, td {
@@ -27,14 +28,48 @@ table a {
 }
 
 .retour {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-top: 3em;
+    gap: 4em;
 }
 
-.retour a {
+.retour a,
+button,
+.panier a {
     background-color: #afabab;
     text-decoration: none;
     color: black;
     padding: 0.7em 3em;
     border-radius: 1em;
+    border: none;
+    font-size: 1.1em;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    transition: 0.3s;
+}
+
+
+li a:hover {
+    background-color: #d3d3d3;
+}
+
+.panier {
+    margin-top: 2em;
+    text-align: center;
 }

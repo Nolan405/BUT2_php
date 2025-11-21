@@ -1,5 +1,5 @@
 <?php
-include "inc/data/products.php";
+include "products.php";
 $data = getProducts();
 
 $produitTitre = $_GET['title'];
@@ -13,7 +13,7 @@ foreach ($data as $p) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,8 @@ foreach ($data as $p) {
         <?php if ($produit) { ?>
         <h1><?php echo $produit['title'] ?></h1>
         <p> description : <?php echo $produit['description'] ?></p>
-        <p> price : <?php echo $produit['price'] ?>$</p>
+        <p> prix : <?php echo $produit['price'] ?>$</p>
+        <p> stock : <?php echo $produit['stock'] ?></p>
         <?php 
         foreach($produit['images'] as $image) {?>
             <img src="<?php echo $image ?>" alt="image">
@@ -38,6 +39,7 @@ foreach ($data as $p) {
     </section>
     <section class="retour">
         <a href="../index.php?marque=<?php echo $produit['brand'] ?>">retour</a>
+        <button>ajouter au panier</button>
     </section>
 </body>
 </html>

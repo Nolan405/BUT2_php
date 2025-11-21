@@ -1,5 +1,7 @@
 <?php
-include "inc/data/products.php";
+session_start();
+
+include "products.php";
 $data = getProducts();
 
 $marque = $_GET['marque'];
@@ -10,6 +12,14 @@ foreach ($data as $produit) {
         $produitsFiltres[] = $produit;
     }
 }
+
+$lstMarque = [];                     
+foreach($data as $produit) {
+    if (!in_array($produit['brand'], $lstMarque)) {
+        $lstMarque[] = $produit['brand'];
+    }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -17,15 +27,25 @@ foreach ($data as $produit) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tp php</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <main>
-        <table border="1">
+        <table>
             <thead>
                 <tr>
-                    <th><?php echo $marque; ?></th>
+                    <th>
+                        <ul>
+                            <?php
+                            foreach($lstMarque as $m) { ?>
+                                <li>
+                                    <a href="/index.php?marque=<?php echo htmlspecialchars($m) ?>"><?php echo htmlspecialchars($m) ?></a>
+                                </li>
+                            <?php
+                            } ?>
+                        </ul>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -41,5 +61,8 @@ foreach ($data as $produit) {
             </tbody>
         </table>
     </main>
+    <section class="panier">
+        <a href="panier.php">Accéder au panier</a>
+    </section>
 </body>
 </html>
