@@ -1,30 +1,57 @@
+body {
+    background-color: #dde8f0;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
-     border: 1;
+    border: 1;
+    box-shadow: 0px 0px 4px 0px black;
 }
 
 th, td {
     border: 1px solid #333;
-    padding: 0.5em 0;
     text-align: center;
 }
 
 th {
-    background-color: #afabab;
+    background-color: #82c8f7;
+}
+
+.active {
+    background-color: #bfdfee;
+}
+
+tr {
+    transition: 0.3s;
 }
 
 tr:hover {
-    background-color: #e0e0e0;
+    background-color: #bfdfee;
 }
 
 table a {
+    display: inline-block;
     text-decoration: none;
     color: black;
+    width: 100%;
+    padding: 0.8em 0;
 }
 
 .detail {
     text-align: center;
+}
+
+.block {
+    padding: 0 1em;
+    text-align: center;
+    margin: 0 25em;
+    margin-top: 10em;
+    padding-bottom: 3em;
+    padding-top: 1em;
+    border-radius: 1em;
+    background-color: #bfdfee;
+    box-shadow: 0px 0px 4px 0px black;
 }
 
 .retour {
@@ -39,13 +66,22 @@ table a {
 .retour a,
 button,
 .panier a {
-    background-color: #afabab;
+    display: inline-block;
+    box-shadow: 0px 0px 4px 0px black;
+    background-color: #82c8f7;
     text-decoration: none;
     color: black;
     padding: 0.7em 3em;
     border-radius: 1em;
     border: none;
+    transition: 0.3s;
     font-size: 1.1em;
+}
+
+.retour a:hover,
+button:hover,
+.panier a:hover {
+    transform: scale(1.05);
 }
 
 ul {
@@ -62,14 +98,38 @@ li {
 
 li a {
     transition: 0.3s;
+    padding: 0.5em 1em;
+    border-radius: 1em;
 }
 
 
 li a:hover {
-    background-color: #d3d3d3;
+    background-color: #bfdfee;
 }
 
 .panier {
     margin-top: 2em;
     text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+td a {
+    padding: 0.5em 0;
+    transition: 0.3s;
+}
+
+td a:hover {
+    background-color: #82c8f7;
+}
+
+td {
+    padding: 0;
+}
+
+.aaaa {
+    margin-top: 1em;
 }

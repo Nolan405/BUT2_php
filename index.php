@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-include "products.php";
+require_once "_inc/data/products.php";
 $data = getProducts();
 
 $marque = $_GET['marque'];
@@ -38,9 +37,12 @@ foreach($data as $produit) {
                     <th>
                         <ul>
                             <?php
+                            $marqueActive = $_GET['marque'] ?? null;
                             foreach($lstMarque as $m) { ?>
                                 <li>
-                                    <a href="/index.php?marque=<?php echo htmlspecialchars($m) ?>"><?php echo htmlspecialchars($m) ?></a>
+                                    <a class="<?php echo ($m === $marqueActive) ? 'active' : ''; ?>" 
+                                    href="/index.php?marque=<?php echo htmlspecialchars($m) ?>">
+                                    <?php echo htmlspecialchars($m) ?></a>
                                 </li>
                             <?php
                             } ?>
