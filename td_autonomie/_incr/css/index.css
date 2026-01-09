@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(248, 248, 248);
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+article {
+    background-color: rgb(181, 219, 252);
+    display: inline-flex;
+    margin-bottom: 1.5em;
+    padding: 1.2em;
+    border-radius: 0.9em;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 0px 4px 0px black;
+}
+
+form button {
+    padding: 1.2em 4em;
+    border-radius: 0.9em;
+    border: none;
+    box-shadow: 0px 0px 4px 0px black;
+}

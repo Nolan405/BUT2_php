@@ -8,12 +8,17 @@ abstract class Input extends GenericFormElement
     public function render(): string
     {
         return sprintf(
-            '<input type="%s" %s value="%s" name="form[%s]" id="%s"/>', 
+            '<div>
+                <input type="%s" %s value="%s" name="form[%s]" id="%s"/>
+                <label for="%s">%s</label>
+            </div>', 
             $this->type,
             $this->isRequired() ? 'required="required"' : '',
             $this->getValue(),
             $this->getName(),
-            $this->getId()
+            $this->getId(),
+            $this->getLabel(),
+            $this->getLabel()
         );
     }
 }

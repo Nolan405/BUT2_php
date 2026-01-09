@@ -10,15 +10,19 @@ abstract class GenericFormElement implements InputRenderInterface
     protected bool $required = false;
 
     protected mixed $value = '';
+    
+    protected string $label = '';
 
     public function __construct(
         protected readonly string $name,
         $required = false, 
-        string $defaultValue = ''
+        string $defaultValue = '',
+        string $label = ''
     )
     {
         $this->required = $required;
         $this->value = $defaultValue;
+        $this->label = $label;
     }
 
     public function __toString(): string
@@ -44,5 +48,10 @@ abstract class GenericFormElement implements InputRenderInterface
     function isRequired(): bool
     {
         return $this->required;
+    }
+
+    function getLabel(): string
+    {
+        return $this->label;
     }
 }
